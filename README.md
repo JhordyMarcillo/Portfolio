@@ -1,10 +1,8 @@
 # Portafolio - Jhordy Marcillo 🚀
 
-> **Ingeniero de Software | Backend & Web Developer**
+> **Ingeniero de Software | Backend, Web, Mobile Developer**
 
 Este repositorio contiene el código fuente de mi portafolio personal, diseñado para mostrar mis proyectos, habilidades técnicas y experiencia de una manera moderna, limpia y altamente performante.
-
-![Preview del Portafolio](https://via.placeholder.com/1000x500?text=Captura+de+Pantalla+de+tu+Portafolio)
 
 ## 🛠 Tech Stack
 
@@ -30,7 +28,7 @@ Si deseas clonar y correr este proyecto localmente:
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/JhordyMarcillo/Portfolio.git](https://github.com/JhordyMarcillo/Portfolio.git)
+    git clone https://github.com/JhordyMarcillo/Portfolio.git
     cd portfolio
     ```
 
