@@ -343,6 +343,44 @@ h1, h2, h3 {
 .delay-3 { animation-delay: 0.5s; }
 .delay-4 { animation-delay: 0.7s; }
 
+/* --- SWITCH DE IDIOMA --- */
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Esquina derecha */
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  
+  padding: 0.6rem 1rem;
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.lang-switch:hover {
+  border-color: var(--accent);
+  background: rgba(24, 24, 27, 0.8);
+}
+
+.lang-switch .active {
+  color: var(--text-main); /* El idioma activo se ve blanco brillante */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.lang-switch .divider {
+  opacity: 0.3;
+}
+
 @keyframes enterUp {
   to {
     opacity: 1;

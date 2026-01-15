@@ -4,12 +4,19 @@ import "./ContactForm.css";
 
 interface Props {
   onClose: () => void;
+  labels: {
+    name: string;
+    subject: string;
+    message: string;
+    btn: string;
+  };
 }
 
-export const ContactForm = ({ onClose }: Props) => {
+export const ContactForm = ({ onClose, labels }: Props) => {
   const [formData, setFormData] = useState({
     name: "",
     subject: "",
+    subjectPlaceholder: "",
     message: "",
   });
 
@@ -43,16 +50,16 @@ export const ContactForm = ({ onClose }: Props) => {
       >
         <button className="form-modal-close" onClick={onClose}>×</button>
         
-        <h3>Mensaje</h3>
+        <h3>{labels.message}</h3>
         
         <form className="contact-form-inner" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Tu Nombre</label>
+            <label htmlFor="name">{labels.name}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Ej. Jhordy Marcillo"
+              placeholder={labels.name}
               required
               value={formData.name}
               onChange={handleChange}
@@ -60,12 +67,12 @@ export const ContactForm = ({ onClose }: Props) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="subject">Asunto</label>
+            <label htmlFor="subject">{labels.subject}</label>
             <input
               type="text"
               id="subject"
               name="subject"
-              placeholder="Ej. Oportunidad laboral / Proyecto en mente"
+              placeholder={labels.subject}
               required
               value={formData.subject}
               onChange={handleChange}
@@ -73,12 +80,12 @@ export const ContactForm = ({ onClose }: Props) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Mensaje</label>
+            <label htmlFor="message">{labels.message}</label>
             <textarea
               id="message"
               name="message"
               rows={5}
-              placeholder="Quiero contactarte para..."
+              placeholder={labels.message}
               required
               value={formData.message}
               onChange={handleChange}
@@ -86,7 +93,7 @@ export const ContactForm = ({ onClose }: Props) => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Abrir correo y enviar →
+            {labels.btn} →
           </button>
         </form>
       </div>

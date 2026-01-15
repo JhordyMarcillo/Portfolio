@@ -1,11 +1,12 @@
 // src/App.tsx
 import { useState } from "react"; 
 import "./styles/global.css";
-import { projects } from "./data/projects";
 import profileImg from "./assets/foto.jpg";
 import ProjectCard from "./components/ProjectCard";
 import { ContactForm } from "./components/ContactForm"; 
-import cvFile from "./assets/CV.pdf";
+import { content, projectsData } from "./data/languages";
+import cvEs from "./assets/CV_Es.pdf"; 
+import cvEn from "./assets/CV_En.pdf";
 
 const techStack = [
   {
@@ -28,9 +29,19 @@ const techStack = [
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [lang, setLang] = useState<'es' | 'en'>('es');
+
+  const t = content[lang];
+  const currentProjects = projectsData[lang];
+  const currentCvFile = lang === 'es' ? cvEs : cvEn; // Switch de PDF
+
   return (
     <>
-    <a href={cvFile} download="CV_Jhordy_Marcillo.pdf" className="floating-cv-btn btn-cv animate-enter delay-0">
+        <a 
+            href={currentCvFile} 
+            download={t.header.cvFile} 
+            className="floating-cv-btn"
+        >
         <svg 
           width="20" 
           height="20" 
@@ -45,8 +56,17 @@ function App() {
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        <span className="cv-text">Descargar CV</span>
+        <span className="cv-text">{t.header.cvBtn}</span>
       </a>
+
+      <button 
+        className="lang-switch" 
+        onClick={() => setLang(prev => prev === 'es' ? 'en' : 'es')}
+      >
+        <span className={lang === 'es' ? 'active' : ''}>ES</span>
+        <span className="divider">/</span>
+        <span className={lang === 'en' ? 'active' : ''}>EN</span>
+      </button>
 
       <div className="header animate-enter delay-1" >
         <div className="header-content">
@@ -57,7 +77,7 @@ function App() {
             />
             <div>
                 <h1>Jhordy Marcillo</h1>
-                <p>Software Engineer · Backend · Web · Mobile</p>
+               <p>{t.header.role}</p>
   
             </div>
         </div>
@@ -65,25 +85,19 @@ function App() {
 
       <main className="container animate-enter delay-2">
         <section className="about">
-          <h2>Sobre mí</h2>
-          <p>
-            Ingeniero de Software especializado en Arquitectura Backend y diseño de datos (SQL/NoSQL), con capacidad sólida para integrar interfaces modernas en Web y Móvil.  <br></br>
-            Cuento con experiencia en el diseño e implementación de lógica de negocio, manejo de APIs, estructuración de aplicaciones y programación orientada a objetos. <br></br>
-            Tengo interes por construir soluciones escalables, mantenibles y bien organizadas, aplicando buenas prácticas de desarrollo, control de versiones y mejora continua del código.
+          <h2>{t.about.title}</h2>
+          <p style={{ whiteSpace: "pre-line" }}>
+            {t.about.description}
           </p>
 
           <div className="tech-stack">
-            <h3>Tecnologías</h3>
+            <h3>{t.about.stackTitle}</h3>
             <div className="tech-grid">
               {techStack.map((group) => (
                 <div key={group.category} className="tech-card">
                   <h4>{group.category}</h4>
                   <div className="tech-tags">
-                    {group.skills.map((tech) => (
-                      <span key={tech} className="tech-tag">
-                        {tech}
-                      </span>
-                    ))}
+                    {group.skills.map(skill => <span key={skill} className="tech-tag">{skill}</span>)}
                   </div>
                 </div>
               ))}
@@ -92,21 +106,18 @@ function App() {
         </section>
 
         <section className="projects animate-enter delay-3">
-          <h2>Proyectos</h2>
+          <h2>{t.projects.title}</h2>
 
           <div className="projects-grid">
-            {projects.map((project) => (
+            {currentProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </section>
 
         <section className="contact animate-enter delay-4">
-          <h2>Contacto</h2>
-          <p className="contact-text">
-            ¿Tienes alguna idea o proyecto? Puedes escribirme directamente al
-            WhatsApp o redactar un correo.
-          </p>
+          <h2>{t.contact.title}</h2>
+          <p className="contact-text">{t.contact.text}</p>
 
           <div className="contact-grid">
             {/*Correo */}
@@ -118,7 +129,7 @@ function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
               <div className="contact-info">
-                <span>Mándame un correo</span>
+                <span>{t.contact.emailCard}</span>
                 <strong>jhordypaulsb2@gmail.com</strong>
               </div>
             </div>
@@ -147,7 +158,7 @@ function App() {
                 </svg>
               </div>
               <div className="contact-info">
-                <span>Escríbeme al WhatsApp</span>
+                <span>{t.contact.whatsappCard}</span>
                 <strong>+593 995743691</strong>
               </div>
             </a>
@@ -156,7 +167,10 @@ function App() {
       </main>
 
       {isContactOpen && (
-        <ContactForm onClose={() => setIsContactOpen(false)} />
+        <ContactForm 
+           onClose={() => setIsContactOpen(false)} 
+           labels={t.contact.form} 
+        />
       )}
 
 

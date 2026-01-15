@@ -18,14 +18,15 @@ export const projects: Project[] = [
     description:
       "Dashboard web para gestión de productos, órdenes y métricas en tiempo real.",
     category: "Web App",
-    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
-    /*images: [
-    "/projects/ecommerce/91R3.png",
-    "/projects/ecommerce/01808.png",
-    "/projects/ecommerce/014078.png",
-  ],*/
+    stack: ["Laravel", "php", "PostgreSQL", "Docker"],
+     images: [
+    "/projects/ecommerce/img1.png",
+    "/projects/ecommerce/img2.png",
+    "/projects/ecommerce/img3.png",
+    "/projects/ecommerce/img4.png",
+  ], 
     github: "https://github.com/JhordyMarcillo",
-    demo: "",
+    demo: "https://variedadencalzado.infinityfreeapp.com",
   },
   {
     id: 2,
@@ -33,8 +34,14 @@ export const projects: Project[] = [
     description:
       "Sistema de chat en tiempo real con salas y manejo de múltiples conexiones.",
     category: "Sistemas Distribuidos",
-    stack: ["Node.js", "WebSocket", "Express"],
-    github: "https://github.com/JhordyMarcillo",
+    stack: ["Node.js", "WebSocket", "Express", "Python", "TypeScript", "React"],
+     images: [
+    "/projects/ecommerce/91R3.png",
+    "/projects/ecommerce/01808.png",
+    "/projects/ecommerce/014078.png",
+  ], 
+    github: "https://github.com/JhordyMarcillo/Salas_Proyecto_Distribuidas",
+    demo: "https://salas-chat-app.onrender.com",
   },
   {
     id: 3,
@@ -43,6 +50,11 @@ export const projects: Project[] = [
       "API bancaria con autenticación JWT y base de datos en Azure SQL.",
     category: "Backend",
     stack: ["Flask", "Python", "Azure SQL", "JWT"],
+     images: [
+    "/projects/ecommerce/91R3.png",
+    "/projects/ecommerce/01808.png",
+    "/projects/ecommerce/014078.png",
+  ], 
     github: "https://github.com/JhordyMarcillo",
   },
   {
@@ -52,6 +64,12 @@ export const projects: Project[] = [
       "Aplicación de escritorio inspirada en Paint, enfocada en gráficos y eventos.",
     category: "Desktop App",
     stack: ["C#", ".NET"],
+     images: [
+    "/projects/paint/img1.png",
+    "/projects/paint/img2.png",
+    "/projects/paint/img3.png",
+    "/projects/paint/img4.png",
+  ], 
     github: "https://github.com/JhordyMarcillo/Paint-C-",
   },
   {
@@ -61,6 +79,21 @@ export const projects: Project[] = [
       "Proceso ETL con datos reales del MIES para análisis y transformación.",
     category: "Data Engineering",
     stack: ["SQL Server", "SSIS", "ETL"],
+     images: [
+    "/projects/ecommerce/91R3.png",   
+    "/projects/ecommerce/01808.png",
+    "/projects/ecommerce/014078.png",
+  ], 
     github: "https://github.com/JhordyMarcillo",
+  },
+
+  {
+    id: 6,
+    title: "SPA Modern - Sistema de Administración",
+    description:
+      "Sistema de administración de usuarios y roles con SPA moderna.",
+    category: "Web App",
+    stack: ["TypeScript", "Angular", "Node.js", "MongoDB"],
+    github: "https://github.com/JhordyMarcillo/ProyectoPrueba",
   },
 ];
