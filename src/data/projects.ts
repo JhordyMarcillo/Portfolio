@@ -89,11 +89,12 @@ export const projects: Project[] = [
 
   {
     id: 6,
-    title: "SPA Modern - Sistema de Administración",
+    title: "Gestión de parqueaderos moviles",
     description:
-      "Sistema de administración de usuarios y roles con SPA moderna.",
-    category: "Web App",
-    stack: ["TypeScript", "Angular", "Node.js", "MongoDB"],
-    github: "https://github.com/JhordyMarcillo/ProyectoPrueba",
+      "Sistema de gestión inteligente de parqueaderos moviles con gestión de espacio y seguimiento de vehículos.",
+    category: "Movil App",
+    stack: ["Java", "Python", "Flutter", "PostgreSQL", "Spring Boot"],
+    
+    github: "https://github.com/JhordyMarcillo/Gestion-de-parqueaderos-Movil",
   },
 ];

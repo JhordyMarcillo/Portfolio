@@ -127,21 +127,28 @@ export const projectsData = {
   },
   {
     id: 5,
+    title: "Gestión de parqueaderos moviles",
+    description:
+      "Sistema de gestión inteligente de parqueaderos moviles con gestión de espacio y seguimiento de vehículos.",
+    category: "Movil App",
+    stack: ["Java", "Python", "Dart", "PostgreSQL", "Spring Boot"],
+    images: [
+    "/projects/backend_bancario/img1.jpeg",   
+    "/projects/backend_bancario/img2.jpeg",
+    "/projects/backend_bancario/img3.jpeg",
+    "/projects/backend_bancario/img4.jpeg",
+    "/projects/backend_bancario/img5.jpeg",
+    ], 
+    github: "https://github.com/JhordyMarcillo/Gestion-de-parqueaderos-Movil",
+  },
+  {
+    id: 6,
     title: "Backend bancario",
     description:
       "API bancaria con autenticación JWT y base de datos en Azure SQL.",
     category: "Backend",
     stack: ["Flask", "Python", "Azure SQL", "JWT"],
     github: "https://github.com/JhordyMarcillo/Banca_Cajero_AzureSQL",
-  },
-  {
-    id: 6,
-    title: "SPA Modern - Sistema de Administración",
-    description:
-      "Sistema de administración de usuarios y roles con SPA moderna.",
-    category: "Web App",
-    stack: ["TypeScript", "Angular", "Node.js", "MongoDB"],
-    github: "https://github.com/JhordyMarcillo/ProyectoPrueba",
   },
   ],
 
@@ -210,21 +217,28 @@ export const projectsData = {
   },
   {
     id: 5,
+    title: "Mobile parking management",
+    description:
+      "Intelligent mobile parking management system with space management and vehicle tracking.",
+    category: "Movil App",
+    stack: ["Java", "Python", "Dart", "PostgreSQL", "Spring Boot"],
+    images: [
+    "/projects/backend_bancario/img1.jpeg",   
+    "/projects/backend_bancario/img2.jpeg",
+    "/projects/backend_bancario/img3.jpeg",
+    "/projects/backend_bancario/img4.jpeg",
+    "/projects/backend_bancario/img5.jpeg",
+    ], 
+    github: "https://github.com/JhordyMarcillo/Gestion-de-parqueaderos-Movil",
+  },
+  {
+    id: 6,
     title: "Banking backend",
     description:
       "Banking API with JWT authentication and Azure SQL database.",
     category: "Backend",
     stack: ["Flask", "Python", "Azure SQL", "JWT"],
     github: "https://github.com/JhordyMarcillo/Banca_Cajero_AzureSQL",
-  },
-  {
-    id: 6,
-    title: "SPA Modern - Management System",
-    description:
-      "Management system for users and roles with a modern SPA.",
-    category: "Web App",
-    stack: ["TypeScript", "Angular", "Node.js", "MongoDB"],
-    github: "https://github.com/JhordyMarcillo/ProyectoPrueba",
   },
   ]
 };
